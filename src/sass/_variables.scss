@@ -1,0 +1,49 @@
+
+$blanco: #ffffff;
+$negro: #000000;
+$anaranjado: #ff6d24;
+$dorado: #967104;
+$morado: #b01afe;
+$color_nav: rgba(0, 0, 0, 0.404);
+$claro1: rgba(219, 209, 209, 0.767);
+$claro2: rgba(219, 209, 209, 0.144);
+$claro3: rgba(121, 118, 118, 0.103);
+$claro4: rgba(175, 171, 171, 0.288);
+
+/*Tamaño de pantalla para el contenido*/
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 90%;
+}
+.content {
+    text-align: center;
+}
+
+/*Estilos generales para un botón*/
+.btn {
+    border: 1px solid $blanco;
+    border-radius: 0.6rem;
+    color: $blanco;
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 1.4rem 4rem;
+    text-transform: capitalize;
+    background-color: $negro;
+    transition: background-color 0.5s ease;
+    &:hover {
+        background-color: #a8a4a454;
+    }
+}
+
+/*hover para mostrar el pointer*/
+.cursor {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+
+

@@ -1,0 +1,529 @@
+@import "mixins";
+@import "variables";
+@import "config";
+
+/**
+// !!Component: HEADER
+*   page: index.js
+*/
+
+/*Contenido principal, muestra el fondo */
+.hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.123), rgba(0, 0, 0, 0.925)),
+        url("../images/img/office-865091_1920.jpg");
+    background-position: bottom center;
+    background-size: cover;
+    height: 100vh;
+
+    .info {
+        display: grid;
+        font-size: 1.8rem;
+        grid-template-rows: 40% 1fr 1fr;
+        height: 90vh;
+        h1 {
+            align-self: flex-start;
+            color: $blanco;
+            grid-row: 2;
+            margin: 0;
+        }
+        .contact {
+            align-self: flex-end;
+            grid-row: 3;
+            justify-self: flex-end;
+            &:hover {
+                background-color: $claro2;
+            }
+        }
+        .social-media {
+            align-self: flex-end;
+            color: $blanco;
+            grid-row: 3;
+            justify-self: right;
+            ul {
+                align-items: flex-end;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                li {
+                    font-size: 3rem;
+                    padding: 1rem 0;
+                }
+            }
+        }
+
+        .github,
+        .email,
+        .twitter,
+        .linkedin {
+            span {
+                display: none;
+                font-family: "Special Elite", cursive, sans-serif;
+                font-size: 1.5rem;
+                margin-right: 1rem;
+                margin: 0;
+                padding: 0;
+                padding-right: 0.5rem;
+                transition: all 0.5s ease-in-out;
+                text-transform: capitalize;
+            }
+            &:hover {
+                span {
+                    border-bottom: 1px solid $blanco;
+                    display: unset;
+                }
+            }
+        }
+    }
+}
+
+/*VERSIÓN MÓVIL //!!NAVBAR
+*   component: Header.js
+*/
+
+.barra-container {
+    background-color: $color_nav;
+    backdrop-filter: blur(5px);
+    position: relative;
+    position: fixed;
+    width: 100vw;
+    z-index: 999;
+    -webkit-backdrop-filter: blur(5px);
+
+    /* Dos columnas, imagen y menu de navegación*/
+
+    .barra-content {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        padding-top: 1rem;
+        .fa-bars {
+            justify-self: flex-end;
+        }
+        .nav {
+            display: none;
+        }
+    }
+}
+
+@include tablet {
+    /*VERSIÓN TABLET HERO*/
+    .hero {
+        .info {
+            font-size: 3rem;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+            h1 {
+                align-self: flex-end;
+            }
+            .social-media {
+                display: unset;
+                grid-column: 2;
+                grid-row: 3;
+                justify-self: flex-end;
+            }
+        }
+
+        /*VERSIÓN TABLET NAVBAR*/
+        .barra-container {
+            .barra-content {
+                img {
+                    width: 50%;
+                }
+                nav {
+                    justify-self: flex-end;
+                }
+                .fa-bars {
+                    display: none;
+                }
+                .nav {
+                    display: unset;
+                }
+            }
+        }
+        /*Acomodar el menu y darle estilos*/
+        .nav {
+            ul {
+                display: flex;
+                li {
+                    margin-right: 5rem;
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+                a {
+                    &:hover {
+                        border-bottom: 2px solid $blanco;
+                        color: $blanco;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**  
+// !!Component: MENU
+*   page: index.js
+**/
+
+/*
+    MENU
+    */
+.section-menu {
+    background-color: $negro;
+    height: 100vh;
+    width: 70vw;
+    position: absolute;
+    // top:4.5rem ;
+    right: 0;
+    display: none;
+    .menu-container {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        .nav {
+            ul {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+        }
+
+        .fa-times-circle {
+            justify-self: center;
+            align-self: center;
+            color: $blanco;
+            font-size: 3rem;
+        }
+    }
+}
+
+.show-menu {
+    display: initial;
+}
+
+/**  
+// !!Component: ABOUT
+*   page: index.js
+**/
+
+.container-about {
+    color: $blanco;
+    padding-top: 6rem;
+
+    .content-about {
+        text-align: center;
+        h3 {
+            margin-bottom: 1rem;
+        }
+        img {
+            width: 40%;
+        }
+        .details-about {
+            p {
+                font-weight: 200;
+                line-height: 1.5;
+                text-align: justify;
+            }
+            .btn {
+                font-size: 1.4rem;
+                padding: 1rem 2rem;
+            }
+        }
+    }
+}
+
+@include tablet {
+    .container-about {
+        padding-top: 8rem;
+        width: 70%;
+        .content-about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            text-align: left;
+            .whoiam {
+                text-align: center;
+            }
+            .details-about {
+                margin-top: 2rem;
+                min-height: 250px;
+            }
+        }
+    }
+}
+
+@include desktop {
+    .content-about {
+        img {
+            max-width: 172px;
+        }
+    }
+}
+
+/**  
+// !!Component: SERVICES
+*   page: index.js
+**/
+
+.services {
+    padding-top: 6rem;
+    .content-services {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+        max-width: 968px;
+        margin: 0 auto;
+
+        .service {
+            background-color: $claro4;
+            color: $blanco;
+            height: 210px;
+            text-align: center;
+            h3 {
+                font-family: Roboto, sans-serif;
+                font-weight: 300;
+                padding: 1rem;
+            }
+            img {
+                margin-top: 1rem;
+                width: 20%;
+            }
+            p {
+                font-size: 1.2rem;
+                line-height: 1.5;
+                margin: 1rem 0 0;
+                padding: 0 1rem;
+                text-align: justify;
+            }
+        }
+    }
+}
+@include tablet {
+    .services {
+        padding-top: 7rem;
+
+        .content-services {
+            grid-template-columns: repeat(4, 1fr);
+            .service {
+                h3 {
+                    padding: 0.5rem 1rem;
+                    // margin-top: 1em;
+                    // font-size: 1.6rem;
+                }
+                img {
+                    width: 30%;
+                    margin-top: 1.5rem;
+                }
+                p {
+                    text-align: center;
+                    line-height: 1.3;
+                }
+                &:hover {
+                    background-color: $claro2;
+                    border-bottom: 3px solid $dorado;
+                }
+            }
+        }
+    }
+}
+
+/**  
+// !!Component: PROJECTS
+*   page: index.js
+**/
+
+.content-projects {
+    padding: 5rem 0 0;
+    h2 {
+        margin: 3rem auto;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-auto-rows: auto;
+        gap: 2.5rem;
+        .card {
+            position: relative;
+            min-height: auto;
+            transition: color 2s linear;
+            h3 {
+                font-family: Roboto, sans-serif;
+                font-weight: 300;
+                font-size:1.9rem;
+                color: $blanco;
+                margin-bottom: 1rem;
+                padding-left: 5px;
+            }
+            p {
+                align-items: flex-end;
+                bottom: 0;
+                height: 90%;
+                color: transparent;
+                display: flex;
+                font-weight: 400;
+                margin: 0;
+                padding: 2rem;
+                position: absolute;
+                transition-property: background-color, color;
+                transition-duration: 0.7s, 0.7s;
+                transition-timing-function: ease, ease;
+                text-align: justify;
+            }
+            .img-project {
+                box-shadow: 0px 0px 5px $negro;
+                max-width: 100%;
+            }
+            .live {
+                color: black;
+                margin-bottom: 3rem;
+            }
+            .img-project {
+                &:hover {
+                    transform: scale(0.99);
+                    filter: grayscale(1);
+                    opacity: 0.5;
+                    &::after {
+                        background-color: rgba(0, 0, 0, 0.2);
+                        content: "";
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+            &:hover p {
+                color: $blanco;
+                background-color: rgba(0, 0, 0, 0.58);
+            }
+        }
+    }
+}
+@include tablet {
+    .content-projects {
+        .cards {
+            max-width: 968px;
+            margin: 0 auto;
+        }
+    }
+}
+
+/**  
+// !!Component: SKills
+*   page: index.js
+**/
+
+.skills {
+    padding-top: 5rem;
+    .container-skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 0 auto;
+        max-width: 968px;
+        .skill {
+            background-color: $claro4;
+            text-align: center;
+            position: relative;
+            img {
+                padding: 1.5rem;
+            }
+            small {
+                bottom: 0;
+                color: $blanco;
+                left: 10px;
+                font-family: "Special Elite", cursive, sans-serif;
+                font-size: 1.2rem;
+                text-align: center;
+                position: absolute;
+            }
+        }
+    }
+}
+@include tablet {
+    .skills {
+        padding-top: 8rem;
+
+        .container-skills {
+            justify-content: center;
+            grid-template-columns: repeat(auto-fill, 222px);
+            .skill {
+                small {
+                    display: none;
+                    font-size: 1.6rem;
+                }
+                &:hover {
+                    background-color: $claro2;
+                    small {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**  
+// !!Component: CONTACT
+*   page: index.js
+**/
+
+.contacts {
+    padding-top: 5rem;
+    .container-contacts {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 0 auto;
+        max-width: 968px;
+        .contact {
+            background-color: $claro4;
+            text-align: center;
+            border-bottom: 5px solid transparent;
+            img {
+                padding: 1.5rem;
+            }
+            h3 {
+                font-family: Roboto, sans-serif;
+                font-weight: 300;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+@include tablet {
+    .contacts {
+        padding-top: 8rem;
+        .container-contacts {
+            justify-content: center;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 220px));
+            .contact {
+                &:hover {
+                    background-color: $claro2;
+                    border-bottom: 3px solid $dorado;
+                }
+            }
+        }
+    }
+}
+/**  
+// !!Component: FOOTER
+*   page: index.js
+**/
+
+footer {
+    background-color: $claro2;
+    color: $claro1;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 1.3rem 0;
+    margin-top: 4rem;
+    h3 {
+        font-size: 1.5rem;
+    }
+    span {
+        display: inline;
+    }
+}

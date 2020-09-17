@@ -1,42 +1,54 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react';
+import Nav from './Nav';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+	return (
+		<header className="hero" id="home">
+			<Nav />
+			<div className="container container-hero">
+				<div className="content-hero">
+					<div className="info">
+						<h1>
+							Raúl Camacho M.
+							<span>Software Engineer | Web Developer</span>
+						</h1>
+						<div className="social-media">
+							<ul>
+								<li className="github">
+									<span>Github</span>
+									<a href="https://github.com/Raulcmm/" target="_blank" rel="noreferrer">
+										<i className="fab fa-github" />
+									</a>
+								</li>
+								<li className="twitter">
+									<span>Twitter</span>
+									<a href="https://twitter.com/RaulCamachoM" target="_blank" rel="noreferrer">
+										<i className="fab fa-twitter" />
+									</a>
+								</li>
+								<li className="linkedin">
+									<span>LinkedIn</span>
+									<a
+										href="https://www.linkedin.com/in/raul-camacho-rcm/"
+										target="_blank"
+										rel="noreferrer"
+									>
+										<i className="fa fa-linkedin" />
+									</a>
+								</li>
+								<li className="email">
+									<span>Email</span>
+									<a href="mailto:rauldevcam@gmail.com?Subject=Contacto trabajo" rel="noreferrer">
+										<i className="far fa-envelope" />
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div >
+		</header>
+	);
+};
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;

@@ -1,0 +1,81 @@
+html {
+    box-sizing: border-box;
+    font-size: 63.5%;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.6rem;
+    background-color: $negro;
+
+   
+}
+
+img {
+    max-width: 100%;
+}
+
+/*Estilos generales para una lista desordenada*/
+ul {
+    list-style: none;
+    li {
+        &:last-of-type {
+            padding: 0;
+        }
+    }
+}
+/*Estilos generales para una referencia*/
+a {
+    color: $claro1;
+    text-decoration: none;
+}
+/*Estilos generales para h1*/
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-family: "Special Elite", cursive;
+}
+/*Estilos generales para "span"*/
+span {
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+i {
+    text-align: right;
+    &.fas {
+        color: $blanco;
+        font-size: 3.6rem;
+    }
+}
+
+
+hr{
+    display: none;
+}
+
+@include tablet {
+    hr {
+        text-align: left;
+        display: flex;
+        width: 10%;
+        height: 1px;
+        color: $claro2;
+    }
+}
+
+h2 {
+    color:$blanco;
+    text-align: center;
+    border-bottom: 4px solid $dorado;
+    width: 150px;
+    margin: 0 auto 4rem;
+    padding-bottom: 5px;
+}
