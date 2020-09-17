@@ -24,7 +24,7 @@ const Projects = () => {
 	`);
 	const arrTechnologies = data.allDatoCmsProject.nodes;
 
-	console.log(arrTechnologies);
+	// console.log(arrTechnologies);
 	return (
 		<section className="content-projects container" id="projects">
 			<h2>My Projects</h2>
