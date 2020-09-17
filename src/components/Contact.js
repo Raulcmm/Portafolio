@@ -10,9 +10,7 @@ const Contact = () => {
 					title
 					link
 					image {
-						uploadId {
-							url
-						}
+						url
 					}
 				}
 			}
@@ -25,11 +23,8 @@ const Contact = () => {
 			<h2>Contact me</h2>
 			<div className="container-contacts ">
 				{arrContact.map((contact) => (
-					<a className="contact cursor" key={contact.id}
-                    
-                    href={contact.link} target="_blank" rel="noreferrer"
-                    >
-						<img src={contact.image.uploadId.url} alt={contact.title} />
+					<a className="contact cursor" key={contact.id} href={contact.link} target="_blank" rel="noreferrer">
+						<img src={contact.image.url} alt={contact.title} />
 						<h3>{contact.title}</h3>
 					</a>
 				))}
