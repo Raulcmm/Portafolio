@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../images/avatar.webp';
 
-import CV from '../assets/CV_Osvaldo_Raúl_Camacho.pdf';
+import CV from '../assets/Cv_Raul_Camacho_M.pdf';
 
 const About = () => {
 	return (
@@ -14,11 +14,11 @@ const About = () => {
 				</div>
 				<div className="details-about">
 					<p>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat iusto placeat itaque quis
-						porro, iste cu sint, adipisci, hic sed vero. Quia cumque inventore velit, ex
-						soluta vitae reprehenderit beatae fuga adipisci, ad aliquam.
+						I'm raul camacho, web developer and software engineer, development is an important part of my
+						life 
+
 					</p>
-					<a href={CV} download >
+					<a href={CV} download>
 						<button className="btn cursor">Download CV</button>
 					</a>
 				</div>
