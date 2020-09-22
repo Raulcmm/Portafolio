@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../images/avatar.webp';
 
-import CV from '../assets/Cv_Raul_Camacho_M.pdf';
+import CV from '../assets/CV_Raul_Camacho.pdf';
 
 const About = () => {
 	return (
